@@ -17,11 +17,11 @@ class Player {
     }
 
     preload () {
-        this.image = loadImage('assets/character-down.png');
+        this.image = loadImage("./../assets/treasure.png");
     }
 
     draw() {
-        // image(this.image, this.row, this.col, 100, 100)
+     image(this.image, this.row, this.col, 100, 100);
     }
     
 }

@@ -1,5 +1,4 @@
-const game = new Game();
-const player = new Player(0,0);
+
 
 function setup() {
   let canvas = createCanvas(WIDTH, HEIGHT);
@@ -7,8 +6,13 @@ function setup() {
 }
 
 function draw() {
+  const game = new Game();
+  const player = new Player(0,0);
+
   game.drawGrid();
-  // player.draw();
+  
+  player.preload();
+  player.draw();
 }
 
 
