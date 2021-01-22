@@ -1,5 +1,9 @@
 class Game {
+  constructor () {
+    this.player = new Player(0, 0);
+  }
   drawGrid() {
+    clear();
 //     Iteration 1
 //     Draw the grid
 //     https://p5js.org/reference/#/p5/line
@@ -31,6 +35,33 @@ class Game {
   
   strokeWeight(4);
   stroke(150);
+  }
+}
+
+class Player {
+  constructor(x, y) {
+      this.row = x;
+      this.col = y;
+      this.img;
+  }
+  moveUp() {
+      this.row -= SQUARE_SIDE;
+  }
+  moveDown() {
+      this.row += SQUARE_SIDE;
+  }   
+  moveLeft() {
+      this.col -= SQUARE_SIDE;
+  }
+  moveRight() {
+      this.col += SQUARE_SIDE;
+  }
+  preloadPlayer(){
+      console.log('preload is called');
+      this.img = loadImage('.././assets/character-down.png');
+  }
+  drawPlayer(){
+      image(this.img, this.col, this.row, 100, 100);
   }
   
 }
